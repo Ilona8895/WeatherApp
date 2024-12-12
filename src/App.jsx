@@ -5,21 +5,26 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Home from "./pages/Home";
 import { WeatcherProvider } from "./contexts/weatherContext";
 import { Toaster } from "react-hot-toast";
+import Authorization from "./ui/Authorization";
+import { AuthorizationProvider } from "./contexts/AuthorizationContext";
 
 function App() {
   return (
-    <WeatcherProvider>
-      <GlobalStyles />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route index element={<Home />} />
-            <Route path="stats" element={<Stats />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-      <Toaster></Toaster>
-    </WeatcherProvider>
+    <AuthorizationProvider>
+      <WeatcherProvider>
+        <GlobalStyles />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route index element={<Home />} />
+              <Route path="auth" element={<Authorization />} />
+              <Route path="stats" element={<Stats />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+        <Toaster></Toaster>
+      </WeatcherProvider>
+    </AuthorizationProvider>
   );
 }
 

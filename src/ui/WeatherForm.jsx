@@ -48,7 +48,7 @@ function WeatherForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    getWeather(city);
+    if (city) getWeather(city);
     setCity("");
   }
 

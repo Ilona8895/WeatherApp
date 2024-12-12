@@ -24,7 +24,7 @@ function Header() {
       <Link to="/">
         <Span>⛅</Span> Weather App
       </Link>
-      <Link to="/stats">Stats</Link>
+      <Link to="/auth">Stats</Link>
     </StyledHeader>
   );
 }
