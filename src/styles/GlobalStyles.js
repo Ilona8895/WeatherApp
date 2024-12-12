@@ -25,35 +25,12 @@ const GlobalStyles = createGlobalStyle`
   --color-grey-800: #1f2937;
   --color-grey-900: #111827;
 
-  --color-blue-100: #e0f2fe;
-  --color-blue-700: #0369a1;
-  --color-green-100: #dcfce7;
-  --color-green-700: #15803d;
-  --color-yellow-100: #fef9c3;
-  --color-yellow-700: #a16207;
-  --color-silver-100: #e5e7eb;
-  --color-silver-700: #374151;
-  --color-indigo-100: #e0e7ff;
-  --color-indigo-700: #4338ca;
-
+  
   --color-red-100: #fee2e2;
   --color-red-700: #b91c1c;
   --color-red-800: #991b1b;
 
-  --backdrop-color: rgba(255, 255, 255, 0.1);
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
-
-  --border-radius-tiny: 3px;
-  --border-radius-sm: 5px;
-  --border-radius-md: 7px;
-  --border-radius-lg: 9px;
-
-  /* For dark mode */
-  --image-grayscale: 0;
-  --image-opacity: 100%;
 }
 
 *,
@@ -63,8 +40,7 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
 
-  /* Creating animations for dark mode */
-  transition: background-color 0.3s, border 0.3s;
+
 }
 
 html {
@@ -76,16 +52,13 @@ body {
   color: var(--color-grey-700);
   background-color: var(--color-grey-50);
 
-  transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
 }
 
 input,
-button,
-textarea,
-select {
+button {
   font: inherit;
   color: inherit;
 }
@@ -112,19 +85,12 @@ select:focus {
   outline-offset: -1px;
 }
 
-/* Parent selector, finally 😃 */
-button:has(svg) {
-  line-height: 0;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-ul {
-  list-style: none;
-}
+
 
 p,
 h1,
@@ -140,8 +106,7 @@ h6 {
 img {
   max-width: 100%;
 
-  /* For dark mode */
-  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+
 }
 
 `;

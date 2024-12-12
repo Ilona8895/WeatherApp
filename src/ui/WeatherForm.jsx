@@ -3,7 +3,6 @@ import Button from "./Button";
 import { useEffect, useState } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { getAddress } from "../services/apiGeocoding";
-import { useQuery } from "@tanstack/react-query";
 import { useWeather } from "../contexts/weatherContext";
 
 const Input = styled.input`
@@ -22,7 +21,7 @@ const FormRow = styled.div`
 
 function WeatherForm() {
   const [city, setCity] = useState("");
-  const { getWeather } = useWeather();
+  const { getWeather, isLoading } = useWeather();
 
   const {
     isLoading: isLoadingPosition,
@@ -74,7 +73,9 @@ function WeatherForm() {
           Get position
         </Button>
       </FormRow>
-      <Button size="large">Check weather</Button>
+      <Button size="large" disabled={isLoading}>
+        {isLoading ? "Loading..." : "Check weather"}
+      </Button>
     </form>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useWeather } from "../contexts/weatherContext";
-import { convertTime, kelvinToCelsius } from "../utils/helpers";
+import Error from "./Error";
 
 const StyledWeatherDescription = styled.div`
   margin-top: 5rem;
@@ -8,6 +8,10 @@ const StyledWeatherDescription = styled.div`
 
 const H3 = styled.h3`
   margin: 2rem;
+`;
+
+const Span = styled.span`
+  color: var(--color-brand-700);
 `;
 
 const H4 = styled.h4`
@@ -26,19 +30,26 @@ const WeatherBlock = styled.div`
   width: 20rem;
   padding: 2rem 1rem;
   border-radius: 7px;
-  border: 1px solid var(--color-brand-500);
+  border: 1px solid var(--color-grey-300);
   background-color: var(--color-brand-200);
 `;
 
+const WeatherDetail = styled.p`
+  padding: 0.5rem;
+`;
+
 function WeatherDescription() {
-  const { weather, activity } = useWeather();
-  console.log(weather);
+  const { weather, activity, error } = useWeather();
+
+  if (error) return <Error message={error} />;
 
   if (!weather.name) return null;
 
   return (
     <StyledWeatherDescription>
-      <H3>Weather for: {weather.name}</H3>
+      <H3>
+        Weather for: <Span>{weather.name}</Span>
+      </H3>
       <Div>
         <WeatherBlock>
           <H4> {weather.description}</H4>
@@ -49,18 +60,20 @@ function WeatherDescription() {
         </WeatherBlock>
         <WeatherBlock>
           <H4>Sunrise/sunset</H4>
-          <p> ☀️ {convertTime(weather.sunrise)}</p>
-          <p> 🌒{convertTime(weather.sunset)}</p>
+          <WeatherDetail> ☀️{weather.sunrise}</WeatherDetail>
+          <WeatherDetail> 🌒{weather.sunset}</WeatherDetail>
         </WeatherBlock>
         <WeatherBlock>
-          <H4>Temperature</H4>
-          <p>Temp: {kelvinToCelsius(weather.temp)} &#x2103;</p>
-          <p>Perceived: {kelvinToCelsius(weather.tempFeels)} &#x2103;</p>
-          <p>Max: {kelvinToCelsius(weather.tempMax)} &#x2103;</p>
-          <p>Min: {kelvinToCelsius(weather.tempMin)} &#x2103;</p>
+          <H4>Temperature 🌡️</H4>
+          <WeatherDetail>Temp: {weather.temp} &#x2103;</WeatherDetail>
+          <WeatherDetail>Perceived: {weather.tempFeels} &#x2103;</WeatherDetail>
+          <WeatherDetail>Max: {weather.tempMax} &#x2103;</WeatherDetail>
+          <WeatherDetail>Min: {weather.tempMin} &#x2103;</WeatherDetail>
         </WeatherBlock>
       </Div>
-      <p>Activity: {activity}</p>
+      <H3>
+        Recommended activity for you today: <Span>{activity}</Span>
+      </H3>
     </StyledWeatherDescription>
   );
 }
