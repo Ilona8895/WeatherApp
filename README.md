@@ -1,8 +1,54 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Search weather condition and store queries in database.
 
-Currently, two official plugins are available:
+## This project is build with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+
+## Managing state
+
+- Context API
+
+## Custom hooks
+
+- useGeolocation
+
+## Styled
+
+- [styled-components](https://styled-components.com/)
+
+## React third-party packeges:
+
+- [React-router](https://reactrouter.com/en/main)
+- [React-hot-toast](https://react-hot-toast.com/)
+
+## Backend
+
+- [NodeJS + Express](https://expressjs.com/)
+- [Supabase](https://supabase.com/)
+
+## Testing
+
+- [Vitest](https://vitest.dev/)
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the server on port 3000
+
+### `npm test`
+
+Runs the unit tests
+
+### `npm run dev`
+
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
