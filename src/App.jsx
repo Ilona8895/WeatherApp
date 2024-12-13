@@ -7,6 +7,8 @@ import { WeatcherProvider } from "./contexts/weatherContext";
 import { Toaster } from "react-hot-toast";
 import Authorization from "./pages/Authorization";
 import { AuthorizationProvider } from "./contexts/AuthorizationContext";
+import PageNotFound from "./ui/PageNotFound";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 function App() {
   return (
@@ -18,7 +20,15 @@ function App() {
             <Route element={<AppLayout />}>
               <Route index element={<Home />} />
               <Route path="auth" element={<Authorization />} />
-              <Route path="stats" element={<Stats />} />
+              <Route
+                path="stats"
+                element={
+                  <ProtectedRoute>
+                    <Stats />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="*" element={<PageNotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>
