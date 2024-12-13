@@ -46,7 +46,6 @@ function Stats() {
         const res = await fetch(`http://127.0.0.1:3000/stats`);
         const data = await res.json();
 
-        // console.log(data);
         setCountQueries(data.count[0].count);
         setTop5(data.top5);
         setLast10(data.last10);

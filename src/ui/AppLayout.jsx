@@ -15,8 +15,6 @@ const Main = styled.main`
 `;
 const Container = styled.div`
   padding: 4rem 4.8rem 6.4rem;
-
-  /* overflow-y: scroll; */
 `;
 
 function AppLayout() {

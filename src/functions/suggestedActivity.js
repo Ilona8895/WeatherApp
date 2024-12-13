@@ -1,5 +1,4 @@
 export function suggestedActivity(temp, weather) {
-  // console.log(temp);
   let activity;
   if (temp <= 1) {
     if (weather === "Snow") {

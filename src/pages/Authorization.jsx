@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Button from "./Button";
+import Button from "../ui/Button";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useAuthorization } from "../contexts/AuthorizationContext";
-import Error from "./Error";
+import Error from "../ui/Error";
 
 const Input = styled.input`
   border-radius: 999px;

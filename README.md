@@ -15,6 +15,10 @@ Search weather condition and store queries in database.
 
 - useGeolocation
 
+## Used API
+
+- [styled-components](https://openweathermap.org/)
+
 ## Styled
 
 - [styled-components](https://styled-components.com/)

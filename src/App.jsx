@@ -5,7 +5,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Home from "./pages/Home";
 import { WeatcherProvider } from "./contexts/weatherContext";
 import { Toaster } from "react-hot-toast";
-import Authorization from "./ui/Authorization";
+import Authorization from "./pages/Authorization";
 import { AuthorizationProvider } from "./contexts/AuthorizationContext";
 
 function App() {
